@@ -1,0 +1,130 @@
+@import "./variables";
+@import "~bootstrap/scss/bootstrap.scss";
+
+@font-face {
+  font-family: Raleway-Bold;
+  src: local('Raleway-Bold'), url(../fonts/Raleway-Bold.woff) format('woff');
+  src: local('Raleway-Bold'), url(../fonts/Raleway-Bold.woff2) format('woff2'),
+  local('Raleway-Bold'), url(../fonts/Raleway-Bold.ttf) format('truetype')
+  local('Raleway-Bold'), url(../fonts/Raleway-Bold.otf) format('otf');
+}
+@font-face {
+  font-family: Raleway-Regular;
+  src: local('Raleway-Regular'), url(../fonts/Raleway-Regular.woff) format('woff');
+  src: local('Raleway-Regular'), url(../fonts/Raleway-Regular.woff2) format('woff2'),
+  local('Raleway-Regular'), url(../fonts/Raleway-Regular.ttf) format('truetype')
+  local('Raleway-Regular'), url(../fonts/Raleway-Regular.otf) format('otf');
+}
+@font-face {
+  font-family: Moon-Light;
+  src: local('MoonLight'), url(../fonts/MoonLight.woff) format('woff');
+  src: local('MoonLight'), url(../fonts/MoonLight.woff2) format('woff2'),
+  local('MoonLight'), url(../fonts/MoonLight.ttf) format('truetype')
+  local('MoonLight'), url(../fonts/MoonLight.otf) format('otf');
+}
+@font-face {
+  font-family: Moon-Bold;
+  src: local('Moon-Bold'), url(../fonts/MoonBold.woff) format('woff');
+  src: local('Moon-Bold'), url(../fonts/MoonBold.woff2) format('woff2'),
+  local('Moon-Bold'), url(../fonts/MoonBold.ttf) format('truetype')
+  local('Moon-Bold'), url(../fonts/MoonBold.otf) format('otf');
+}
+
+$tableHeight: 4em;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Raleway-Regular, sans-serif;
+  color: black
+}
+
+.form-control{
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  background: transparent;
+}
+.form-control:focus{
+  background: transparent;
+}
+
+.form-control.no-default-border{
+  border-color:transparent;
+}
+.form-control.no-default-border:focus{
+  border-color:$primary;
+}
+
+.form-control:disabled,
+.form-control:read-only{
+  border:0
+}
+
+label {
+  font-weight: 100;
+  font-size: 0.75em;
+}
+.custom-control-label{
+  line-height: 1.5rem;
+}
+.custom-control-label::before{
+  border: 1px solid map-get($theme-colors, "dark");
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid, 
+.was-validated .custom-select:invalid, .custom-select.is-invalid{
+  color: $danger;
+
+  &::placeholder {
+    color: $danger;
+  }
+}
+
+.was-validated .form-control:invalid:focus, 
+.form-control.is-invalid:focus, 
+.was-validated .custom-select:invalid:focus,
+.custom-select.is-invalid:focus{
+  box-shadow: none;
+}
+.was-validated .form-control:valid, .form-control.is-valid, .was-validated .custom-select:valid, .custom-select.is-valid{
+  border-color: $gray-700;
+}
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus, .was-validated .custom-select:valid:focus, .custom-select.is-valid:focus{
+  box-shadow: none;
+  border-color: map-get($theme-colors, "primary");
+}
+
+.table-height{
+  height: $tableHeight;
+}
+
+.table input {
+  height: $tableHeight;
+}
+.table th, .table td{
+  padding: 0;
+}
+.table thead th{
+  border-width: 1px;
+}
+
+.btn-danger,
+.btn-success{
+  color: $white;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}    
+.cursor-move{
+  cursor: move;
+}   
+
+.semi-visible{
+  opacity: 0.5;
+}
+
+.moon-light{
+  font-family: Moon-Light;
+}
